@@ -10,7 +10,8 @@ export class AppComponent {
   title = 'app';
   @ViewChild('result') resultElement: ElementRef;
   elementType: 'url' | 'canvas' | 'img' = 'img';
-  value: string = 'Soy el mejor';
+  value: string = 'algo más';
+  devices: any[];
   @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
 
   constructor(private renderer: Renderer2) {
@@ -26,10 +27,10 @@ export class AppComponent {
           videoDevices.push(device);
         }
       }
+      this.devices = videoDevices;
       if (videoDevices.length > 0) {
         let choosenDev;
         for (const dev of videoDevices) {
-          alert(dev.label);
           if (dev.label.includes('front')) {
             choosenDev = dev;
             break;
