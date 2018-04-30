@@ -3,6 +3,7 @@
 <div #result fxFlex="20" fxFill></div> -->
 
 
+{{valueScanner | json}}
 <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="value">sfd
 </ngx-qrcode>
 <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="'something'">
@@ -11,4 +12,3 @@
   <qr-scanner [debug]="false" [canvasWidth]="1080" [canvasHeight]="1080" [stopAfterScan]="true" [updateTime]="500">
   </qr-scanner>
 </div>
-{{valueScanner | json}}
