@@ -8,7 +8,7 @@
 <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="'something'">
 </ngx-qrcode>
 <div style="width: 200px; height: 200px">
-  <qr-scanner [debug]="false" [canvasWidth]="1080" [canvasHeight]="720" [stopAfterScan]="true" [updateTime]="500">
+  <qr-scanner [debug]="false" [canvasWidth]="1080" [canvasHeight]="1080" [stopAfterScan]="true" [updateTime]="500">
   </qr-scanner>
 </div>
-{{valueScanner}}
+{{valueScanner | json}}

@@ -11,7 +11,7 @@ export class AppComponent {
   @ViewChild('result') resultElement: ElementRef;
   elementType: 'url' | 'canvas' | 'img' = 'img';
   value: string = 'algo más';
-  valueScanner: any;
+  valueScanner: any = "nothing yet";
   @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
 
   constructor(private renderer: Renderer2) {
