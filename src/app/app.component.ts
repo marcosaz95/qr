@@ -11,7 +11,7 @@ export class AppComponent {
   @ViewChild('result') resultElement: ElementRef;
   elementType: 'url' | 'canvas' | 'img' = 'img';
   value: string = 'algo más';
-  devices: any[];
+  valueScanner: any;
   @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
 
   constructor(private renderer: Renderer2) {
@@ -27,11 +27,10 @@ export class AppComponent {
           videoDevices.push(device);
         }
       }
-      this.devices = videoDevices;
       if (videoDevices.length > 0) {
         let choosenDev;
         for (const dev of videoDevices) {
-          if (dev.label.includes('front')) {
+          if (dev.label.includes('back')) {
             choosenDev = dev;
             break;
           }
@@ -45,7 +44,7 @@ export class AppComponent {
     });
 
     this.qrScannerComponent.capturedQr.subscribe(result => {
-      console.log(result);
+      this.valueScanner = result;
     });
   }
 
