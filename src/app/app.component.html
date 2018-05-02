@@ -2,7 +2,10 @@
   [qrr-type]="'url'"></ng2-qrcode-reader>
 <div #result fxFlex="20" fxFill></div> -->
 
+<app-order-list (showDetailEvent)="showDetail($event)" *ngIf="!currentOrder"></app-order-list>
+<app-order-detail [orderNumber]="currentOrder" (showDetailEvent)="showDetail($event)" *ngIf="currentOrder"></app-order-detail>
 
+<!-- 
 {{valueScanner | json}}
 <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="value">sfd
 </ngx-qrcode>
@@ -11,4 +14,4 @@
 <div style="width: 200px; height: 200px">
   <qr-scanner [debug]="false" [canvasWidth]="1080" [canvasHeight]="1080" [stopAfterScan]="true" [updateTime]="500">
   </qr-scanner>
-</div>
+</div> -->

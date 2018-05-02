@@ -1,23 +1,34 @@
+import { MaterialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgQRCodeReaderModule } from 'ng2-qrcode-reader';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from './app.component';
 import { NgQrScannerModule } from 'angular2-qrscanner';
+import { QrComponent } from './components/qr/qr.component';
+import { OrderListComponent } from './components/order-list/order-list.component';
+import { OrderDetailComponent } from './components/order-detail/order-detail.component';
+import { QrSearchComponent } from './components/qr-search/qr-search.component';
+import { OrderService } from './services/order.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QrComponent,
+    OrderListComponent,
+    OrderDetailComponent,
+    QrSearchComponent
   ],
   imports: [
     BrowserModule,
-    NgQRCodeReaderModule,
     NgxQRCodeModule,
-    NgQrScannerModule
+    NgQrScannerModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
