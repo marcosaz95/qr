@@ -10,8 +10,8 @@
   </div>
 
   <div fxLayout="row" fxLayoutAlign="center start">
-    <div class="list-container" *ngIf="!isOpenQRSearch">
-      <app-order-list [highlightedOrder]="highlightedOrder"></app-order-list>
+    <div class="list-container" [hidden]="isOpenQRSearch">
+      <app-order-list [qrFiltered]="qrFiltered"></app-order-list>
     </div>
   </div>
 

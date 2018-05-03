@@ -12,7 +12,7 @@ export class OrderListComponent implements OnInit {
   orderList: IOrder[];
   currentOrder: string;
   searchFilter: string = "";
-  @Input() highlightedOrder: string;
+  @Input() qrFiltered: string = "";
 
   constructor(private _qrService: OrderService) {
     this.orderList = _qrService.orderList;
@@ -23,9 +23,5 @@ export class OrderListComponent implements OnInit {
 
   showDetail(orderNumber) {
     this.currentOrder = orderNumber;
-  }
-
-  searchByQR() {
-
   }
 }

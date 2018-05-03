@@ -10,7 +10,7 @@
   <input matInput placeholder="Search order by product or number" [(ngModel)]="searchFilter">
 </mat-form-field>
 <div *ngIf="!currentOrder">
-  <mat-card class="example-card" *ngFor="let order of orderList | orderName:searchFilter">
+  <mat-card class="example-card" *ngFor="let order of orderList | orderName:searchFilter:qrFiltered">
     <mat-card-header>
       <mat-card-title>{{order.product}}</mat-card-title>
       <mat-card-subtitle>Order Number: {{order.orderNumber}}</mat-card-subtitle>
@@ -27,5 +27,3 @@
 </div>
 
 <app-order-detail [orderNumber]="currentOrder" (showDetailEvent)="showDetail($event)" *ngIf="currentOrder"></app-order-detail>
-
-{{ highlightedOrder }}
