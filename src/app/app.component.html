@@ -2,16 +2,18 @@
   [qrr-type]="'url'"></ng2-qrcode-reader>
 <div #result fxFlex="20" fxFill></div> -->
 
-<div fxLayout="row">
+<div fxLayout="row" fxLayoutAlign="center start">
   <div class="menu-container" fxLayout="column">
-    <div fxLayout="row" fxLayoutAlign="end center">
-      <!-- Input -->
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <mat-form-field>
+        <input matInput placeholder="Search order by product or number" [(ngModel)]="searchFilter">
+      </mat-form-field>
       <button mat-button (click)="isOpenQRSearch = true">Buscar por QR</button>
     </div>
 
-    <div fxLayout="row" fxLayoutAlign="center start">
+    <div fxLayout="row">
       <div class="list-container" *ngIf="!isOpenQRSearch">
-        <app-order-list [highlightedOrder]="highlightedOrder"></app-order-list>
+        <app-order-list [highlightedOrder]="highlightedOrder" [searchFilter]="searchFilter"></app-order-list>
       </div>
     </div>
 

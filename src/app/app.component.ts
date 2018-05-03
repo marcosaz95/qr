@@ -8,9 +8,9 @@ import { QrScannerComponent } from 'angular2-qrscanner';
 })
 export class AppComponent {
   currentOrder: string = "";
-  isOpenList: boolean = false;
   isOpenQRSearch: boolean = false;
   highlightedOrder: string = "";
+  searchFilter: string = "";
 
   constructor(private renderer: Renderer2) {
 
@@ -21,7 +21,6 @@ export class AppComponent {
 
   highlightOrderEvent(event) {
     this.isOpenQRSearch = false;
-    this.isOpenList = true;
     this.highlightedOrder = event;
   }
 }
