@@ -7,7 +7,7 @@
   <br>
 </div> -->
 <div *ngIf="!currentOrder">
-  <mat-card class="example-card" *ngFor="let order of orderList | orderName:searchFilter:qrFiltered">
+  <mat-card class="example-card" *ngFor="let order of orderList | orderName:searchFilter">
     <mat-card-header>
       <mat-card-title>{{order.product}}</mat-card-title>
       <mat-card-subtitle>Order Number: {{order.orderNumber}}</mat-card-subtitle>
