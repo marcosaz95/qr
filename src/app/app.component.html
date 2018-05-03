@@ -2,8 +2,14 @@
   [qrr-type]="'url'"></ng2-qrcode-reader>
 <div #result fxFlex="20" fxFill></div> -->
 
-<app-order-list (showDetailEvent)="showDetail($event)" *ngIf="!currentOrder"></app-order-list>
-<app-order-detail [orderNumber]="currentOrder" (showDetailEvent)="showDetail($event)" *ngIf="currentOrder"></app-order-detail>
+
+<div class="menu-container" *ngIf="!isOpenList && !isOpenQRSearch" fxLayout="row" fxLayoutAlign="center center">
+  <button mat-button (click)="isOpenList = true">Ver Lista</button>
+  <button mat-button (click)="isOpenQRSearch = true">Buscar por QR</button>
+</div>
+
+<app-order-list *ngIf="isOpenList" [highlightedOrder]="highlightedOrder"></app-order-list>
+<app-qr-search *ngIf="isOpenQRSearch" (highlightOrder)="highlightOrderEvent($event)"></app-qr-search>
 
 <!-- 
 {{valueScanner | json}}

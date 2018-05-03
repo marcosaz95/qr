@@ -1,5 +1,5 @@
 import { IOrder } from './../../interfaces/order.interface';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { OrderService } from '../../services/order.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { OrderService } from '../../services/order.service';
 export class OrderListComponent implements OnInit {
 
   orderList: IOrder[];
-  @Output() showDetailEvent = new EventEmitter<string>();
+  currentOrder: string;
+  @Input() highlightedOrder: string;
 
   constructor(private _qrService: OrderService) {
     this.orderList = _qrService.orderList;
@@ -20,7 +21,7 @@ export class OrderListComponent implements OnInit {
   }
 
   showDetail(orderNumber) {
-    this.showDetailEvent.emit(orderNumber);
+    this.currentOrder = orderNumber;
   }
 
 }
