@@ -11,6 +11,9 @@ import { OrderListComponent } from './components/order-list/order-list.component
 import { OrderDetailComponent } from './components/order-detail/order-detail.component';
 import { QrSearchComponent } from './components/qr-search/qr-search.component';
 import { OrderService } from './services/order.service';
+import { OrderNamePipe } from './pipes/order-name.pipe';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -19,14 +22,16 @@ import { OrderService } from './services/order.service';
     QrComponent,
     OrderListComponent,
     OrderDetailComponent,
-    QrSearchComponent
+    QrSearchComponent,
+    OrderNamePipe
   ],
   imports: [
     BrowserModule,
     NgxQRCodeModule,
     NgQrScannerModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [OrderService],
   bootstrap: [AppComponent]

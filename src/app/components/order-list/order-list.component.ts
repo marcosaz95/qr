@@ -11,6 +11,7 @@ export class OrderListComponent implements OnInit {
 
   orderList: IOrder[];
   currentOrder: string;
+  searchFilter: string = "";
   @Input() highlightedOrder: string;
 
   constructor(private _qrService: OrderService) {
@@ -24,4 +25,7 @@ export class OrderListComponent implements OnInit {
     this.currentOrder = orderNumber;
   }
 
+  searchByQR() {
+
+  }
 }
