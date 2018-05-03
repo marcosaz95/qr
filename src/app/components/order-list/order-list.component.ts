@@ -12,7 +12,6 @@ export class OrderListComponent implements OnInit {
   orderList: IOrder[];
   currentOrder: string;
   @Input() searchFilter: string;
-  @Input() qrFiltered: string = "";
 
   constructor(private _qrService: OrderService) {
     this.orderList = _qrService.orderList;
