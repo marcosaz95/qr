@@ -7,9 +7,10 @@ export class OrderService {
   private _orderList: IOrder[] = [];
 
   constructor() {
+    const orderNumbers = ['FMKH1T0432', 'U2V6CTV6R1', 'SY3UKRLSMG', 'IDO7LWL2I5', 'L3ZUBOQVXZ', 'RIU1ERSPEP', '6BU3EV1D21', '09I352BROT', '40CYGEX3Q1', 'X6XQSMQJGM'];
     for (let i = 0; i < 10; i++) {
       this._orderList.push({
-        orderNumber: this.generateRandomValue(),
+        orderNumber: orderNumbers[i],
         product: `product ${i + 1}`,
         description: `description ${i + 1}`
       })
@@ -19,13 +20,4 @@ export class OrderService {
   get orderList(): IOrder[] {
     return this._orderList;
   }
-
-  generateRandomValue(): string {
-    let text = "";
-    const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    for (let i = 0; i < 10; i++)
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
-  }
-
 }

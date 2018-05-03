@@ -12,8 +12,8 @@
     </div>
 
     <div fxLayout="row">
-      <div class="list-container" *ngIf="!isOpenQRSearch">
-        <app-order-list [highlightedOrder]="highlightedOrder" [searchFilter]="searchFilter"></app-order-list>
+      <div class="list-container" [hidden]="isOpenQRSearch">
+        <app-order-list [qrFiltered]="qrFiltered" [searchFilter]="searchFilter"></app-order-list>
       </div>
     </div>
 

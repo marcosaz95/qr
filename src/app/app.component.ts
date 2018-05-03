@@ -1,3 +1,4 @@
+import { OrderListComponent } from './components/order-list/order-list.component';
 import { Component, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { QrScannerComponent } from 'angular2-qrscanner';
 
@@ -9,7 +10,8 @@ import { QrScannerComponent } from 'angular2-qrscanner';
 export class AppComponent {
   currentOrder: string = "";
   isOpenQRSearch: boolean = false;
-  highlightedOrder: string = "";
+  qrFiltered: string = "";
+  @ViewChild(OrderListComponent) orderListComponent: OrderListComponent;
   searchFilter: string = "";
 
   constructor(private renderer: Renderer2) {
@@ -21,6 +23,6 @@ export class AppComponent {
 
   highlightOrderEvent(event) {
     this.isOpenQRSearch = false;
-    this.highlightedOrder = event;
+    this.qrFiltered = event;
   }
 }
