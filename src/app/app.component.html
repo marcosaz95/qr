@@ -5,7 +5,7 @@
 <div fxLayout="row" fxLayoutAlign="center start">
   <div class="menu-container" fxLayout="column">
     <div fxLayout="row" fxLayoutAlign="space-between center">
-      <mat-form-field>
+      <mat-form-field fxFlex>
         <input matInput placeholder="Search order by product or number" [(ngModel)]="searchFilter">
       </mat-form-field>
       <button mat-button (click)="isOpenQRSearch = true">Buscar por QR</button>
