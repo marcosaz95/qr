@@ -6,6 +6,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTooltipModule
   ],
   exports: [
     MatButtonModule,
@@ -22,7 +24,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTooltipModule
   ]
 })
 export class MaterialModule { }

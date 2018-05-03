@@ -1,14 +1,11 @@
-<!-- <ng2-qrcode-reader (result)="something($event)" [qrr-show]="true" [qrr-value]="'https://assets.econsultancy.com/images/resized/0002/4236/qr_code-blog-third.png'"
-  [qrr-type]="'url'"></ng2-qrcode-reader>
-<div #result fxFlex="20" fxFill></div> -->
-
 <div fxLayout="row" fxLayoutAlign="center start">
   <div class="menu-container" fxLayout="column">
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <mat-form-field fxFlex>
         <input matInput placeholder="Search order by product or number" [(ngModel)]="searchFilter">
       </mat-form-field>
-      <button mat-button (click)="isOpenQRSearch = true">Buscar por QR</button>
+      <i class="material-icons noselect scanIcon" (click)="isOpenQRSearch = true" *ngIf="!isOpenQRSearch" matTooltip="Scan QR code">center_focus_strong</i>
+      <i class="material-icons noselect" (click)="isOpenQRSearch = false" *ngIf="isOpenQRSearch">close</i>
     </div>
 
     <div fxLayout="row">
@@ -20,13 +17,3 @@
     <app-qr-search *ngIf="isOpenQRSearch" (highlightOrder)="highlightOrderEvent($event)"></app-qr-search>
   </div>
 </div>
-<!-- 
-{{valueScanner | json}}
-<ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="value">sfd
-</ngx-qrcode>
-<ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="'something'">
-</ngx-qrcode>
-<div style="width: 200px; height: 200px">
-  <qr-scanner [debug]="false" [canvasWidth]="1080" [canvasHeight]="1080" [stopAfterScan]="true" [updateTime]="500">
-  </qr-scanner>
-</div> -->
