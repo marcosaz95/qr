@@ -1,4 +1,8 @@
-{{orderNumber}}
-<ngx-qrcode [qrc-element-type]="'img'" [qrc-value]="orderNumber">sfd
-</ngx-qrcode>
-<button (click)="goBack()">go back</button>
+<mat-card>
+    <mat-card-header fxLayout="row" fxLayoutAlign="end center">
+        <i class="material-icons noselect" (click)="goBack()">close</i>
+    </mat-card-header>
+    {{orderNumber}}
+    <ngx-qrcode [qrc-element-type]="'img'" [qrc-value]="orderNumber">sfd
+    </ngx-qrcode>
+</mat-card>

@@ -11,8 +11,8 @@ export class OrderService {
     for (let i = 0; i < 10; i++) {
       this._orderList.push({
         orderNumber: orderNumbers[i],
-        product: `product ${i + 1}`,
-        description: `description ${i + 1}`
+        product: `Product ${i + 1}`,
+        description: `Product Description ${i + 1}`
       })
     }
   }

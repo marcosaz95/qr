@@ -2,9 +2,13 @@
   <div class="menu-container" fxLayout="column">
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <mat-form-field fxFlex>
-        <input matInput placeholder="Search order by product or number" [(ngModel)]="searchFilter">
+        <input matInput placeholder="Search order by number or product name" [(ngModel)]="searchFilter" [disabled]="isOpenQRSearch">
       </mat-form-field>
-      <i class="material-icons noselect scanIcon" (click)="isOpenQRSearch = true" *ngIf="!isOpenQRSearch" matTooltip="Scan QR code">center_focus_strong</i>
+      <!-- <i class="material-icons noselect scanIcon" (click)="isOpenQRSearch = true" *ngIf="!isOpenQRSearch" matTooltip="Scan QR code">center_focus_strong</i> -->
+      <!-- <div  fxLayout="row" fxLayoutAlign="center start"> -->
+      <img class="noselect scanIcon" src="../assets/scan_icon.png" *ngIf="!isOpenQRSearch" matTooltip="Scan QR code" (click)="isOpenQRSearch = true"
+      />
+      <!-- </div> -->
       <i class="material-icons noselect" (click)="isOpenQRSearch = false" *ngIf="isOpenQRSearch">close</i>
     </div>
 
