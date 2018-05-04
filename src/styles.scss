@@ -32,3 +32,10 @@ html {
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+
+.qrcode {
+  img {
+      width: 250px;
+      height: 250px;
+  }
+}

@@ -1,8 +1,12 @@
 <mat-card>
-    <mat-card-header fxLayout="row" fxLayoutAlign="end center">
+    <mat-card-header fxLayout="row" fxLayoutAlign="space-between center">
+        <span>
+            {{orderNumber}}
+        </span>
         <i class="material-icons noselect" (click)="goBack()">close</i>
     </mat-card-header>
-    {{orderNumber}}
-    <ngx-qrcode [qrc-element-type]="'img'" [qrc-value]="orderNumber">sfd
-    </ngx-qrcode>
+    <mat-card-content fxLayout="row" fxLayoutAlign="center start">
+        <ngx-qrcode [qrc-element-type]="'img'" [qrc-value]="orderNumber">sfd
+        </ngx-qrcode>
+    </mat-card-content>
 </mat-card>

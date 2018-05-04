@@ -12,6 +12,7 @@ export class OrderDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   goBack() {

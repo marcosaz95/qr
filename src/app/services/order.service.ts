@@ -12,7 +12,7 @@ export class OrderService {
       this._orderList.push({
         orderNumber: orderNumbers[i],
         product: `Product ${i + 1}`,
-        description: `Product Description ${i + 1}`
+        description: `Order Description ${i + 1}`
       })
     }
   }
