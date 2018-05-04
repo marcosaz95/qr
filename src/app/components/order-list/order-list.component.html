@@ -1,11 +1,3 @@
-<!-- <div *ngFor="let order of orderList">
-  <label class="name">
-    {{order.product}}
-  </label>
-  <label>{{order.description}}</label>
-  <span>Order Number: {{order.orderNumber}}</span>
-  <br>
-</div> -->
 <div *ngIf="!currentOrder">
   <mat-card class="order-card" *ngFor="let order of orderList | orderName:searchFilter">
     <mat-card-header>

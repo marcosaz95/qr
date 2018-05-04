@@ -1,6 +1,13 @@
 .mat-card {
     border-radius: 12px;
 
+    .mat-card-header {
+        span {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+    }
+
     i {
         cursor: pointer;
     }
